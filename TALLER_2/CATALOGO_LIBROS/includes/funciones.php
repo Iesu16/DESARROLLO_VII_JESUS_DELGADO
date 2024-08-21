@@ -1,5 +1,4 @@
 <?php
-// Función que simula la obtención de libros de una base de datos
 function obtenerLibros() {
     return [
         [
@@ -36,7 +35,6 @@ function obtenerLibros() {
 }
 
 
-// Función que muestra los detalles de un libro en formato HTML
 function mostrarDetallesLibro($libro) {
     return "
     <div class='libro'>

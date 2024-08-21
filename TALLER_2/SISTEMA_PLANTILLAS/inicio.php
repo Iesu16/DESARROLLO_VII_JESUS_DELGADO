@@ -1,5 +1,5 @@
 <?php
-$paginaActual = 'inicio'; // Cambia esto según el archivo
+$paginaActual = 'inicio'; 
 require_once 'plantillas/funciones.php';
 $tituloPagina = obtenerTituloPagina($paginaActual);
 include 'plantillas/encabezado.php';
