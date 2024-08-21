@@ -2,12 +2,12 @@
 $nombre_completo = "Jesus Delgado"; 
 $edad = 25; 
 $correo = "jesus.delgado2@utp.ac.pa"; 
-$telefono = "6565-0000";
+$telefono = "65650000";
 
 define("OCUPACION", "Tester");
 
 echo "<p>Nombre completo: " . $nombre_completo . "</p>";
-print "<p>Edad: " . $edad . "</p>";
+print "<p>Edad :  $edad </p>";
 printf("<p>Correo electrónico: %s</p>", $correo);
 echo "<p>Teléfono: {$telefono}</p>";
 echo "<p>Ocupación: " . OCUPACION . "</p>";
