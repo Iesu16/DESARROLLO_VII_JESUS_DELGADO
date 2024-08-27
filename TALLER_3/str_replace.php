@@ -11,11 +11,12 @@ echo "Frase modificada: $fraseModificada
 
 // Ejercicio: Crea una variable con una frase que contenga al menos tres veces la palabra "PHP"
 // y usa str_replace() para cambiar "PHP" por "JavaScript"
-$miFrase = "Un pollo de montaña no es un ave"; // Reemplaza esto con tu frase
-$miFraseModificada = str_replace("PHP", "JavaScript", $miFrase);
+$miFrase = "<br>Un pollo de montaña no es un ave    <br>"; // Reemplaza esto con tu frase
+$buscar = ["pollo", "no"];
+$reemplazar = ["aguila", "si"];
+$miFraseModificada = str_replace($buscar, $reemplazar, $miFrase);
 
-echo "
-Mi frase original: $miFrase
+echo "<br>Mi frase original: $miFrase
 ";
 echo "Mi frase modificada: $miFraseModificada
 ";
