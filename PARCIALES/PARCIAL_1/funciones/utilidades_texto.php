@@ -7,6 +7,10 @@ function obtenerTituloPagina($pagina) {
 }
 
 function contar_palabras($texto) {
+    $arraycontarp = explode(" ", $texto);
+    $arraycontarn = count($arraycontarp);
+    return $arraycontarn;
+    
 }
 
 function contar_vocales($texto) {  
