@@ -27,12 +27,14 @@ function contar_vocales($texto) {
     return $contador;
 }
 
-// Ejemplo de uso:
-$texto = "Hola Mundo";
-echo contar_vocales($texto); // Salida: 4
-
 
 function invertir_palabras($texto) {
+    $palabras = explode(' ', $texto);
+    $palabras_invertidas = array_reverse($palabras);
+    $texto_invertido = implode(' ', $palabras_invertidas);
+    
+    return $texto_invertido;
 }
+
 
 ?>
