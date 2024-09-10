@@ -1,7 +1,7 @@
 
 <?php
 // Ejemplo de uso de strlen()
-$nombre = "Juan Pérez ";
+$nombre = "Juan Pérez";
 $longitud = strlen($nombre);
 
 echo "El nombre '$nombre' tiene $longitud caracteres.";
