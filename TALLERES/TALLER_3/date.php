@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de date()
 echo "<br><br>Fecha actual: " . date("Y-m-d") . "";
