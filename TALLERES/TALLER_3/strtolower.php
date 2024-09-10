@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de strtolower()
 $textoMixto = "HoLa MuNdO";
