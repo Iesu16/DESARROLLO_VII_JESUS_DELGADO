@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de round()
 $numero = 3.14159;
