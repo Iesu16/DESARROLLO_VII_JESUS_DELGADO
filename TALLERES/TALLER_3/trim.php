@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de trim()
 $textoConEspacios = "   Hola, mundo!   ";
