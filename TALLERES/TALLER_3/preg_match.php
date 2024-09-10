@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de preg_match()
 $texto = "El código postal es 12345";
