@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de array_push()
 $frutas = ["Manzana", "Naranja", "Plátano"];
