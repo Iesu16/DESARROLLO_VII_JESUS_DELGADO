@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de count()
 $frutas = ["Manzana", "Naranja", "Plátano", "Uva", "Pera"];
