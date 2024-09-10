@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de file_put_contents()
 $archivo = "ejemplo.txt";
