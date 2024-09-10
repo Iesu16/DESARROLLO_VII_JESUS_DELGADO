@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de json_decode() con un JSON simple
 $jsonFrutas = '["manzana","banana","naranja"]';
