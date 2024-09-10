@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de array_sum()
 $numeros = [1, 2, 3, 4, 5];
