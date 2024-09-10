@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de is_array()
 $frutas = ["Manzana", "Naranja", "Plátano"];
