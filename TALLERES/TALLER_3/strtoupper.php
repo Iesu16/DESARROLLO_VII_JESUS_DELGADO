@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de strtoupper()
 $textoMixto = "HoLa MuNdO ";
