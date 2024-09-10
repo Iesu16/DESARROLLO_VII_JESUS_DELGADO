@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de json_encode() con un array simple
 $frutas = ["manzana", "banana", "naranja"];
