@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de implode()
 $frutas = ["Manzana", "Naranja", "Plátano", "Uva"];
