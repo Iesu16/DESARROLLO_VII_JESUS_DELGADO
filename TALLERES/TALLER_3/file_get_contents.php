@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de file_get_contents() con un archivo local
 $contenidoArchivo = file_get_contents("ejemplo.txt");
