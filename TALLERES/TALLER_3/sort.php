@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de sort()
 $numeros = [5, 2, 8, 1, 9];
