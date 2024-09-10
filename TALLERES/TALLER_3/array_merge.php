@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de array_merge()
 $frutas1 = ["manzana", "pera"];
