@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de str_replace()
 $frase = "El gato negro saltó sobre el perro negro";
