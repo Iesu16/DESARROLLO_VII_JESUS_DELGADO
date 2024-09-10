@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de in_array()
 $frutas = ["manzana", "banana", "naranja", "uva"];
