@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo de uso de explode()
 $frase = "Manzana,Naranja,Plátano,Uva<br>";
