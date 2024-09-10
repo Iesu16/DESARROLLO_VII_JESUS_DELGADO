@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de strpos()
 $texto = "Hola, mundo!";
