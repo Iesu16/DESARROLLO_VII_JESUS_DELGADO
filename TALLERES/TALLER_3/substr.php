@@ -1,4 +1,3 @@
-
 <?php
 // Ejemplo básico de substr()
 $texto = "Hola Mundo<br>";
