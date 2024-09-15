@@ -58,7 +58,6 @@ class Libro implements Prestable {
         return $this->disponible;
     }
 
-
 }
 
 // Ejemplo de uso
