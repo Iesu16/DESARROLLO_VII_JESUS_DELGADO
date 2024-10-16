@@ -6,21 +6,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errores = [];
     $datos = [];
 
-    // Procesar y validar cada campo
     $campos = ['nombre', 'email', 'edad', 'sitio_web', 'genero', 'intereses', 'comentarios'];
     foreach ($campos as $campo) {
         if (isset($_POST[$campo])) {
             $valor = $_POST[$campo];
-            $valorSanitizado = call_user_func("sanitizar" . ucfirst($campo), $valor);
+            $funcionSanitizar = "sanitizar" . ucfirst(str_replace('_', '', $campo));
+            $valorSanitizado = call_user_func($funcionSanitizar, $valor);
             $datos[$campo] = $valorSanitizado;
 
-            if (!call_user_func("validar" . ucfirst($campo), $valorSanitizado)) {
+            $funcionValidar = "validar" . ucfirst(str_replace('_', '', $campo));
+            if (!call_user_func($funcionValidar, $valorSanitizado)) {
                 $errores[] = "El campo $campo no es válido.";
             }
         }
     }
 
-    // Procesar la foto de perfil
     if (isset($_FILES['foto_perfil']) && $_FILES['foto_perfil']['error'] !== UPLOAD_ERR_NO_FILE) {
         if (!validarFotoPerfil($_FILES['foto_perfil'])) {
             $errores[] = "La foto de perfil no es válida.";
@@ -34,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Mostrar resultados o errores
     if (empty($errores)) {
         echo "<h2>Datos Recibidos:</h2>";
         foreach ($datos as $campo => $valor) {
