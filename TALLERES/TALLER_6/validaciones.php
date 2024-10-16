@@ -44,8 +44,6 @@ function validarFotoPerfil($archivo) {
     if ($archivo['error'] !== UPLOAD_ERR_OK) {
         return false;
     }
-
-    // Validar tipo MIME real
     $tipoReal = mime_content_type($archivo['tmp_name']);
     if (!in_array($tipoReal, $tiposPermitidos)) {
         return false;
