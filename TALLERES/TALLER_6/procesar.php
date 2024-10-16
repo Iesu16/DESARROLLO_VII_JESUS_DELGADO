@@ -6,7 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errores = [];
     $datos = [];
 
-    // Agregar fecha de nacimiento al listado de campos
     $campos = ['nombre', 'email', 'sitio_web', 'genero', 'intereses', 'comentarios', 'fecha_nacimiento'];
 
     foreach ($campos as $campo) {
@@ -23,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Cálculo de la edad
     if (isset($datos['fecha_nacimiento'])) {
         $fechaNacimiento = new DateTime($datos['fecha_nacimiento']);
         $hoy = new DateTime();
@@ -35,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Procesar la foto de perfil (con nombre único)
     if (isset($_FILES['foto_perfil']) && $_FILES['foto_perfil']['error'] !== UPLOAD_ERR_NO_FILE) {
         if (!validarFotoPerfil($_FILES['foto_perfil'])) {
             $errores[] = "La foto de perfil no es válida.";
@@ -50,9 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Mostrar resultados o errores
     if (empty($errores)) {
-        // Guardar los datos en archivo JSON
         $archivoDatos = 'datos.json';
         if (file_exists($archivoDatos)) {
             $registros = json_decode(file_get_contents($archivoDatos), true);
@@ -62,7 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $registros[] = $datos;
         file_put_contents($archivoDatos, json_encode($registros, JSON_PRETTY_PRINT));
 
-        // Mostrar los datos procesados
         echo "<h2>Datos Recibidos:</h2>";
         echo "<table border='1'>";
         foreach ($datos as $campo => $valor) {
@@ -78,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         echo "</table>";
     } else {
-        // Mostrar errores
         echo "<h2>Errores:</h2>";
         echo "<ul>";
         foreach ($errores as $error) {
