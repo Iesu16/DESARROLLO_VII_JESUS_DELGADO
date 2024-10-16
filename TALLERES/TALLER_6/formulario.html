@@ -19,7 +19,6 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
 
-        <!-- Eliminamos el campo de Edad porque se calcula automáticamente -->
 
         <label for="sitio_web">Sitio Web:</label>
         <input type="url" id="sitio_web" name="sitio_web"><br><br>
@@ -50,7 +49,6 @@
     </form>
 
     <script>
-        // Deshabilitar el botón de enviar después de presionarlo para evitar envíos múltiples
         document.getElementById('btnEnviar').addEventListener('click', function() {
             this.disabled = true;
             this.form.submit();
