@@ -1,14 +1,19 @@
 <?php
 function validarNombre($nombre) {
-    return !empty($nombre) && strlen($nombre) <= 50;
+    return !empty($nombre) && strlen($nombre) <= 50 && preg_match("/^[a-zA-Z\s]+$/", $nombre);
+}
+
+function validarFechaNacimiento($fecha) {
+    if (empty($fecha)) {
+        return false;
+    }
+    $fechaActual = new DateTime();
+    $fechaNacimiento = new DateTime($fecha);
+    return $fechaNacimiento <= $fechaActual;
 }
 
 function validarEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
-}
-
-function validarEdad($edad) {
-    return is_numeric($edad) && $edad >= 18 && $edad <= 120;
 }
 
 function validarSitioWeb($sitioWeb) {
@@ -22,7 +27,10 @@ function validarGenero($genero) {
 
 function validarIntereses($intereses) {
     $interesesValidos = ['deportes', 'musica', 'lectura'];
-    return !empty($intereses) && count(array_intersect($intereses, $interesesValidos)) === count($intereses);
+    if (!is_array($intereses)) {
+        return false;
+    }
+    return empty($intereses) || count(array_intersect($intereses, $interesesValidos)) === count($intereses);
 }
 
 function validarComentarios($comentarios) {
@@ -37,7 +45,9 @@ function validarFotoPerfil($archivo) {
         return false;
     }
 
-    if (!in_array($archivo['type'], $tiposPermitidos)) {
+    // Validar tipo MIME real
+    $tipoReal = mime_content_type($archivo['tmp_name']);
+    if (!in_array($tipoReal, $tiposPermitidos)) {
         return false;
     }
 
