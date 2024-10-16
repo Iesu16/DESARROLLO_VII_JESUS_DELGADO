@@ -1,4 +1,5 @@
 <?php
+
 function sanitizarNombre($nombre) {
     return htmlspecialchars(trim($nombre), ENT_QUOTES, 'UTF-8');
 }
