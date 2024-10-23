@@ -8,8 +8,8 @@
         exit;
     }
     if($_SERVER['REQUEST_METHOD']=="POST"){
-        $user = $_POST['nombre_usuario'];
-        $pass = $_POST['contra_usuario'];
+        $user = $_POST['n_usuario'];
+        $pass = $_POST['c_usuario'];
 
         foreach ($usuarios as $usuario){
             $user_S = $usuario['user'];
@@ -26,5 +26,5 @@
         }
     }
 
-    echo "Error: Usuario No Registrado. " . '<a href="Iniciar_Sesion.php">Volver</a>';
+    echo "Error: Usuario No Registrado. " . '<a href="index.html">Volver</a>';
 ?>
