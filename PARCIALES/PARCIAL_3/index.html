@@ -91,16 +91,12 @@
 </head>
 
 <body>
-    <form action="login.php" method="post" id="datos_usuario">
-        <h1>Inicio de Sesión</h1>
-        <label for="nombre_usuario">Nombre de Usuario:</label>
-        <input type="text" name="nombre_usuario" id="n_usuario" required>
-
-        <label for="contra_usuario">Contraseña:</label>
-        <input type="password" name="contra_usuario" id="c_usuario" required>
-
-        <input type="submit" name="enviando" id="enviando" value="Enviar">
+    <form method="POST" action="login.php">
+        <input type="text" name="n_usuario" placeholder="Nombre de Usuario">
+        <input type="password" name="c_usuario" placeholder="Contraseña">
+        <input type="submit" value="Iniciar Sesión">
     </form>
+    
 </body>
 
 </html>
