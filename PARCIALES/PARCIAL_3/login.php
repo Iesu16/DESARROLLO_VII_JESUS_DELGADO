@@ -1,30 +1,47 @@
 <?php
     session_start();
+    
+    // Cargar y verificar el archivo JSON
     $jsonData = file_get_contents('data.json');
+    if ($jsonData === false) {
+        die("Error al cargar el archivo JSON.");
+    }
+    
     $data = json_decode($jsonData, true);
+    if ($data === null) {
+        die("Error al decodificar el archivo JSON.");
+    }
+    
     $usuarios = $data['usuarios'];
-    if(isset($_SESSION['usuario'])) {
-        header("Location: ../index.php");
+    
+    // Redirigir si ya está conectado
+    if (isset($_SESSION['usuario'])) {
+        header("Location: index.php");
         exit;
     }
-    if($_SERVER['REQUEST_METHOD']=="POST"){
+
+    // Procesar formulario si es enviado por POST
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $user = $_POST['n_usuario'];
         $pass = $_POST['c_usuario'];
 
-        foreach ($usuarios as $usuario){
+        // Buscar el usuario en la lista
+        foreach ($usuarios as $usuario) {
             $user_S = $usuario['user'];
             $pass_S = $usuario['contrasena'];
             $id = $usuario['id'];
             
-            if($user === $user_S && $pass === $pass_S){
+            // Verificar credenciales
+            if ($user === $user_S && $pass === $pass_S) {
                 $_SESSION['usuario'] = $user;        
                 $_SESSION['contrasena'] = $pass;
                 $_SESSION['userid'] = $id;
-                header("Location: ../index.php");
+                header("Location: index.php");
                 exit;
             }
         }
-    }
 
-    echo "Error: Usuario No Registrado. " . '<a href="index.html">Volver</a>';
+        // Si no se encontró el usuario
+        echo "Error: Usuario No Registrado. " . '<a href="index.html">Volver</a>';
+    }
 ?>
