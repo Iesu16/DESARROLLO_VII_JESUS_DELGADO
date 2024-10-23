@@ -1,0 +1,25 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Juan",
+            "usuario": "juan123"
+        }
+    ],
+    "notas": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "materia": "Matemáticas",
+            "nota": 95,
+            "comentarios": "Excelente rendimiento"
+        },
+        {
+            "id": 2,
+            "user_id": 1,
+            "materia": "Historia",
+            "nota": 88,
+            "comentarios": "Buen trabajo"
+        }
+    ]
+}
