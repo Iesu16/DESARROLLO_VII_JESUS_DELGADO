@@ -1,6 +1,7 @@
 <?php
 require_once "config_mysqli.php";
-//  1. Productos que tienen un precio mayor al promedio de su categoría
+
+// 1. Productos que tienen un precio mayor al promedio de su categoría
 $sql = "SELECT p.nombre, p.precio, c.nombre as categoria,
         (SELECT AVG(precio) FROM productos WHERE categoria_id = p.categoria_id) as promedio_categoria
         FROM productos p
@@ -16,10 +17,12 @@ $result = mysqli_query($conn, $sql);
 if ($result) {
     echo "<h3>Productos con precio mayor al promedio de su categoría:</h3>";
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "Producto: {$row['nombre']}, Precio: ${$row['precio']}, ";
-        echo "Categoría: {$row['categoria']}, Promedio categoría: ${$row['promedio_categoria']}<br>";
+        echo "Producto: {$row['nombre']}, Precio: $" . number_format($row['precio'], 2) . ", ";
+        echo "Categoría: {$row['categoria']}, Promedio categoría: $" . number_format($row['promedio_categoria'], 2) . "<br>";
     }
     mysqli_free_result($result);
+} else {
+    die("ERROR: Could not execute query. " . mysqli_error($conn));
 }
 
 // 2. Clientes con compras superiores al promedio
@@ -41,10 +44,12 @@ $result = mysqli_query($conn, $sql);
 if ($result) {
     echo "<h3>Clientes con compras superiores al promedio:</h3>";
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "Cliente: {$row['nombre']}, Total compras: ${$row['total_compras']}, ";
-        echo "Promedio general: ${$row['promedio_ventas']}<br>";
+        echo "Cliente: {$row['nombre']}, Total compras: $" . number_format($row['total_compras'], 2) . ", ";
+        echo "Promedio general: $" . number_format($row['promedio_ventas'], 2) . "<br>";
     }
     mysqli_free_result($result);
+} else {
+    die("ERROR: Could not execute query. " . mysqli_error($conn));
 }
 
 mysqli_close($conn);
