@@ -1,7 +1,7 @@
 <?php
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');  
-define('DB_PASSWORD', '');   
+define('DB_PASSWORD', '12345');   
 define('DB_NAME', 'taller9_db');
 
 $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
