@@ -1,6 +1,5 @@
 <?php
 require_once "config_pdo.php";
-
 try {
     // 1. Productos que tienen un precio mayor al promedio de su categoría
     $sql = "SELECT p.nombre, p.precio, c.nombre as categoria,
