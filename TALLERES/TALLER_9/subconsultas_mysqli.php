@@ -1,7 +1,7 @@
 <?php
 require_once "config_mysqli.php";
 
-// 1. Productos que tienen un precio mayor al promedio de su categoría
+//  1. Productos que tienen un precio mayor al promedio de su categoría
 $sql = "SELECT p.nombre, p.precio, c.nombre as categoria,
         (SELECT AVG(precio) FROM productos WHERE categoria_id = p.categoria_id) as promedio_categoria
         FROM productos p
