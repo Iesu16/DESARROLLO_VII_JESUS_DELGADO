@@ -2,7 +2,7 @@
 // Configuración de Google OAuth
 define('CLIENT_ID', 'ID'); // Reemplaza con tu client_id de Google OAuth
 define('CLIENT_SECRET', 'CLAVE'); // Reemplaza con tu client_secret de Google OAuth
-define('REDIRECT_URI', 'http://localhost/PARCIALES/PARCIAL_4/callback.php'); // URL de redireccionamiento tras autenticación
+define('REDIRECT_URI', 'http://localhost/PARCIALES/PARCIAL_4/callback.php'); //
 
 // Configuración de API de Google Books
 define('GOOGLE_API_KEY', 'TU_GOOGLE_API_KEY'); // Reemplaza con tu API Key de Google Books
