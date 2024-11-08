@@ -1,7 +1,7 @@
 <?php
 // Configuración de Google OAuth
-define('CLIENT_ID', '100787409462-8j0c79t6mvte8f9tv3qctv55n1tnf035.apps.googleusercontent.com'); // Reemplaza con tu client_id de Google OAuth
-define('CLIENT_SECRET', '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'); // Reemplaza con tu client_secret de Google OAuth
+define('CLIENT_ID', 'ID'); // Reemplaza con tu client_id de Google OAuth
+define('CLIENT_SECRET', 'CLAVE'); // Reemplaza con tu client_secret de Google OAuth
 define('REDIRECT_URI', 'http://localhost/PARCIALES/PARCIAL_4/callback.php'); // URL de redireccionamiento tras autenticación
 
 // Configuración de API de Google Books
