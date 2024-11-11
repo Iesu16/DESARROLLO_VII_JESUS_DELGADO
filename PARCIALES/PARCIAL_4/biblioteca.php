@@ -53,141 +53,152 @@ $libros_guardados = obtenerLibrosGuardados($pdo, $user_id);
     <meta charset="UTF-8">
     <title>Mi Biblioteca</title>
     <style>
-        /* General */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            margin: 0;
-        }
-        h1 {
-            color: #333;
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        .container {
-            max-width: 900px;
-            width: 100%;
-        }
-        
-        /* Botón de cerrar sesión */
-        .logout-btn {
-            background-color: #d9534f;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            transition: background-color 0.3s;
-        }
-        .logout-btn:hover {
-            background-color: #c9302c;
-        }
-        
-        /* Buscador */
-        .search-bar {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        .search-bar input[type="text"] {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px 0 0 5px;
-            width: 80%;
-            outline: none;
-        }
-        .search-bar button {
-            padding: 10px;
-            background-color: #337ab7;
-            color: white;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .search-bar button:hover {
-            background-color: #286090;
-        }
-        
-        /* Grid y tarjetas de libros */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            width: 100%;
-            margin-top: 20px;
-        }
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        .card h2 {
-            font-size: 1.3em;
-            color: #333;
-            margin: 10px 0;
-        }
-        .card p {
-            font-size: 0.9em;
-            color: #666;
-            margin: 5px 0;
-        }
-        
-        /* Formulario de reseña */
-        .review-form textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            margin-top: 10px;
-            resize: none;
-            font-size: 0.9em;
-        }
-        .review-form button {
-            margin-top: 10px;
-            padding: 8px 16px;
-            border: none;
-            background-color: #5cb85c;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .review-form button:hover {
-            background-color: #4cae4c;
-        }
-        
-        /* Botón de eliminar */
-        .delete-btn {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #d9534f;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .delete-btn:hover {
-            color: #c9302c;
-        }
-    </style>
+    /* General */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        margin: 0;
+    }
+    h1 {
+        color: #333;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    .container {
+        max-width: 900px;
+        width: 100%;
+    }
+    
+    /* Botón de cerrar sesión */
+    .logout-btn {
+        background-color: #d9534f;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        transition: background-color 0.3s;
+    }
+    .logout-btn:hover {
+        background-color: #c9302c;
+    }
+    
+    /* Buscador */
+    .search-bar {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .search-bar input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px 0 0 5px;
+        width: 80%;
+        outline: none;
+    }
+    .search-bar button {
+        padding: 10px;
+        background-color: #337ab7;
+        color: white;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .search-bar button:hover {
+        background-color: #286090;
+    }
+    
+    /* Grid y tarjetas de libros */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .card h2 {
+        font-size: 1.3em;
+        color: #333;
+        margin: 10px 0;
+    }
+    .card p {
+        font-size: 0.9em;
+        color: #666;
+        margin: 5px 0;
+    }
+    
+    /* Formulario de reseña */
+    .review-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .review-form textarea {
+        width: 90%; /* Asegura que el cuadro de texto esté centrado */
+        max-width: 500px; /* Limita el tamaño máximo del cuadro de texto */
+        padding: 15px; /* Aumenta el espacio interior */
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        margin-top: 10px;
+        resize: none;
+        font-size: 0.9em;
+        box-sizing: border-box; /* Asegura que el padding no expanda el tamaño total */
+    }
+    
+    .review-form button {
+        margin-top: 10px;
+        padding: 8px 16px;
+        border: none;
+        background-color: #5cb85c;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .review-form button:hover {
+        background-color: #4cae4c;
+    }
+    
+    /* Botón de eliminar */
+    .delete-btn {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #d9534f;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .delete-btn:hover {
+        color: #c9302c;
+    }
+</style>
+
 </head>
 <body>
     <h1>Mi Biblioteca</h1>
