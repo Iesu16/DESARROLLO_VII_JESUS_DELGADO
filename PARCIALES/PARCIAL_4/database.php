@@ -1,7 +1,7 @@
 <?php
 // database.php
 
-// Configuración de la base de datos (esto debería coincidir con las definiciones de tu archivo config.php)
+// Configuración de la base de datos 
 require_once 'config.php';
 
 try {

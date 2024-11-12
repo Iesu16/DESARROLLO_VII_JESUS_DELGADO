@@ -1,11 +1,14 @@
 <?php
+require 'config.php';
+include 'header.php';
 if (isset($_GET['query'])) {
     $query = urlencode($_GET['query']);
-    $apiKey = 'APIKEY';  // Clave API
+    $apiKey = GOOGLE_API_KEY;  // Clave API
     $url = "https://www.googleapis.com/books/v1/volumes?q={$query}&key={$apiKey}";
 
-    $response = file_get_contents($url);
+    $response = file_get_contents(filename: $url);
     $data = json_decode($response, true);
+   
 
     if (!empty($data['items'])) {
         echo "<div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;'>";
