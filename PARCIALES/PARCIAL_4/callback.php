@@ -1,4 +1,4 @@
-call back: <?php
+ <?php
 session_start();
 require 'config.php';
 require 'database.php'; //conexión a base de datos
